@@ -9,9 +9,9 @@ import tensorflow.keras.backend as K
 from sklearn.metrics import log_loss
 from tensorflow import keras
 from tensorflow.keras import layers
-df1 = pd.read_csv('../train.csv')
-df2 = pd.read_csv('../test.csv')
-sam = pd.read_csv('../sample_submission.csv')
+df1 = pd.read_csv('../input/tabular-playground-series-jun-2021/train.csv')
+df2 = pd.read_csv('../input/tabular-playground-series-jun-2021/test.csv')
+sam = pd.read_csv('../input/tabular-playground-series-jun-2021/sample_submission.csv')
 data1 = df1.copy()
 data1['target'] = data1['target'].str.slice(start=6).astype(int) - 1
 X = data1.drop(columns=['id', 'target'])
